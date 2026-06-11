@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Shiva Krishna Rangu | Senior PMO Analyst</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet"/>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --navy: #0f2744;
+    --navy-mid: #1a3a5c;
+    --teal: #0d7a6b;
+    --teal-light: #e1f5f0;
+    --gold: #b8860b;
+    --gold-light: #fff8e1;
+    --text: #1c2b3a;
+    --text-muted: #526070;
+    --border: #dde4ec;
+    --bg: #f7f9fc;
+    --white: #ffffff;
+    --section-gap: 72px;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Inter', sans-serif;
+    font-size: 15px;
+    color: var(--text);
+    background: var(--bg);
+    line-height: 1.7;
+  }
+
+  /* NAV */
+  nav {
+    position: sticky; top: 0; z-index: 100;
+    background: var(--navy);
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 0 48px;
+    height: 56px;
+  }
+  .nav-brand {
+    font-size: 14px; font-weight: 600; color: #fff; letter-spacing: 0.06em;
+    text-transform: uppercase; text-decoration: none;
+  }
+  .nav-links { display: flex; gap: 32px; list-style: none; }
+  .nav-links a {
+    color: rgba(255,255,255,0.7); font-size: 13px; text-decoration: none;
+    letter-spacing: 0.04em; transition: color 0.2s;
+  }
+  .nav-links a:hover { color: #fff; }
+
+  /* HERO */
+  .hero {
+    background: linear-gradient(135deg, var(--navy) 0%, var(--navy-mid) 60%, #0f3d5f 100%);
+    padding: 80px 48px 72px;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 40px;
+    align-items: center;
+  }
+  .hero-eyebrow {
+    font-size: 12px; font-weight: 600; letter-spacing: 0.14em;
+    text-transform: uppercase; color: #5bc4ac; margin-bottom: 16px;
+  }
+  .hero-name {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(32px, 4vw, 52px);
+    font-weight: 700;
+    color: #ffffff;
+    line-height: 1.15;
+    margin-bottom: 12px;
+  }
+  .hero-title {
+    font-size: 16px; color: rgba(255,255,255,0.65);
+    margin-bottom: 28px; font-weight: 400;
+    max-width: 560px; line-height: 1.5;
+  }
+  .hero-pills { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 36px; }
+  .hero-pill {
+    background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2);
+    border-radius: 100px; padding: 5px 14px;
+    font-size: 12px; color: rgba(255,255,255,0.85); font-weight: 500;
+  }
+  .hero-contacts { display: flex; flex-wrap: wrap; gap: 20px; }
+  .hero-contacts a {
+    color: #5bc4ac; font-size: 13px; text-decoration: none;
+    display: flex; align-items: center; gap: 6px;
+  }
+  .hero-contacts a:hover { color: #fff; }
+
+  /* HERO STATS CARD */
+  .hero-stats {
+    background: rgba(255,255,255,0.07);
+    border: 1px solid rgba(255,255,255,0.15);
+    border-radius: 16px;
+    padding: 32px 28px;
+    min-width: 220px;
+    display: flex; flex-direction: column; gap: 24px;
+  }
+  .stat-item { text-align: center; }
+  .stat-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 36px; font-weight: 700; color: #ffffff;
+    line-height: 1;
+  }
+  .stat-label {
+    font-size: 11px; color: rgba(255,255,255,0.55);
+    text-transform: uppercase; letter-spacing: 0.08em; margin-top: 4px;
+  }
+  .stat-divider { height: 1px; background: rgba(255,255,255,0.1); }
+
+  /* CONTAINER */
+  .container { max-width: 1040px; margin: 0 auto; padding: 0 48px; }
+
+  /* SECTION */
+  section { padding: var(--section-gap) 0; }
+  .section-label {
+    font-size: 11px; font-weight: 600; letter-spacing: 0.16em;
+    text-transform: uppercase; color: var(--teal); margin-bottom: 10px;
+  }
+  .section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 28px; font-weight: 700; color: var(--navy);
+    margin-bottom: 40px; line-height: 1.2;
+  }
+
+  /* DIVIDER */
+  .divider { height: 1px; background: var(--border); }
+
+  /* SUMMARY */
+  .summary-text {
+    font-size: 16px; line-height: 1.85; color: var(--text-muted);
+    max-width: 760px;
+  }
+
+  /* ACHIEVEMENTS */
+  .achievements-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+  }
+  .achievement-card {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 24px;
+    border-top: 3px solid var(--teal);
+  }
+  .achievement-icon {
+    width: 40px; height: 40px; border-radius: 10px;
+    background: var(--teal-light);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 18px; margin-bottom: 14px;
+  }
+  .achievement-title {
+    font-weight: 600; font-size: 14px; color: var(--navy); margin-bottom: 6px;
+  }
+  .achievement-desc {
+    font-size: 13px; color: var(--text-muted); line-height: 1.6;
+  }
+  .achievement-metric {
+    display: inline-block; margin-top: 12px;
+    background: var(--teal-light); color: var(--teal);
+    font-size: 12px; font-weight: 600; border-radius: 100px;
+    padding: 4px 12px;
+  }
+
+  /* EXPERIENCE */
+  .experience-list { display: flex; flex-direction: column; gap: 32px; }
+  .exp-card {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 28px 32px;
+    position: relative;
+  }
+  .exp-card::before {
+    content: '';
+    position: absolute; left: 0; top: 24px; bottom: 24px;
+    width: 4px; border-radius: 0 4px 4px 0;
+    background: var(--teal);
+  }
+  .exp-header { display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 8px; margin-bottom: 6px; }
+  .exp-role { font-weight: 600; font-size: 16px; color: var(--navy); }
+  .exp-period {
+    font-size: 12px; font-weight: 500; color: var(--white);
+    background: var(--teal); border-radius: 100px; padding: 3px 12px;
+  }
+  .exp-company { font-size: 13px; color: var(--text-muted); margin-bottom: 16px; }
+  .exp-company span { font-weight: 500; color: var(--navy); }
+  .exp-bullets { padding-left: 18px; }
+  .exp-bullets li {
+    font-size: 14px; color: var(--text-muted); margin-bottom: 8px; line-height: 1.6;
+  }
+  .exp-bullets li::marker { color: var(--teal); }
+
+  /* SKILLS */
+  .skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 20px;
+  }
+  .skill-group {
+    background: var(--white); border: 1px solid var(--border);
+    border-radius: 12px; padding: 20px 22px;
+  }
+  .skill-group-title {
+    font-size: 12px; font-weight: 600; text-transform: uppercase;
+    letter-spacing: 0.1em; color: var(--navy); margin-bottom: 14px;
+    display: flex; align-items: center; gap: 8px;
+  }
+  .skill-group-title::before {
+    content: ''; width: 20px; height: 2px; background: var(--gold);
+  }
+  .skill-tags { display: flex; flex-wrap: wrap; gap: 8px; }
+  .skill-tag {
+    font-size: 12px; padding: 4px 10px; border-radius: 6px;
+    background: var(--bg); border: 1px solid var(--border);
+    color: var(--text); font-weight: 400;
+  }
+
+  /* CERTIFICATIONS */
+  .cert-list { display: flex; flex-wrap: wrap; gap: 12px; }
+  .cert-badge {
+    background: var(--gold-light);
+    border: 1px solid rgba(184,134,11,0.2);
+    border-radius: 8px; padding: 8px 16px;
+    font-size: 13px; font-weight: 500; color: #7a5700;
+    display: flex; align-items: center; gap: 6px;
+  }
+  .cert-badge::before { content: '🏅'; font-size: 15px; }
+
+  /* EDUCATION */
+  .edu-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+  .edu-card {
+    background: var(--white); border: 1px solid var(--border);
+    border-radius: 12px; padding: 24px;
+    display: flex; gap: 16px; align-items: flex-start;
+  }
+  .edu-icon {
+    width: 44px; height: 44px; border-radius: 10px;
+    background: #eef3ff; display: flex; align-items: center; justify-content: center;
+    font-size: 20px; flex-shrink: 0;
+  }
+  .edu-degree { font-weight: 600; font-size: 14px; color: var(--navy); margin-bottom: 4px; }
+  .edu-college { font-size: 13px; color: var(--text-muted); }
+
+  /* CTA */
+  .cta-section {
+    background: var(--navy);
+    border-radius: 20px;
+    padding: 56px 48px;
+    text-align: center;
+    margin-bottom: 72px;
+  }
+  .cta-section h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 32px; color: #fff; margin-bottom: 14px;
+  }
+  .cta-section p { font-size: 15px; color: rgba(255,255,255,0.6); margin-bottom: 28px; }
+  .cta-buttons { display: flex; justify-content: center; gap: 16px; flex-wrap: wrap; }
+  .btn-primary {
+    background: var(--teal); color: #fff;
+    padding: 12px 28px; border-radius: 8px; font-size: 14px; font-weight: 500;
+    text-decoration: none; display: inline-block; transition: background 0.2s;
+  }
+  .btn-primary:hover { background: #0a6557; }
+  .btn-outline {
+    background: transparent; color: rgba(255,255,255,0.8);
+    padding: 12px 28px; border-radius: 8px; font-size: 14px; font-weight: 500;
+    text-decoration: none; display: inline-block;
+    border: 1px solid rgba(255,255,255,0.25); transition: border-color 0.2s;
+  }
+  .btn-outline:hover { border-color: rgba(255,255,255,0.6); color: #fff; }
+
+  /* FOOTER */
+  footer {
+    text-align: center; padding: 24px 48px;
+    font-size: 12px; color: var(--text-muted);
+    border-top: 1px solid var(--border);
+  }
+
+  /* RESPONSIVE */
+  @media (max-width: 760px) {
+    nav { padding: 0 20px; }
+    .nav-links { display: none; }
+    .hero { grid-template-columns: 1fr; padding: 48px 20px; }
+    .hero-stats { flex-direction: row; flex-wrap: wrap; justify-content: space-around; min-width: auto; }
+    .container { padding: 0 20px; }
+    .edu-grid { grid-template-columns: 1fr; }
+    .cta-section { padding: 40px 24px; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a class="nav-brand" href="#">Shiva Krishna Rangu</a>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#achievements">Impact</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div>
+    <p class="hero-eyebrow">Senior PMO Analyst · Hyderabad, India</p>
+    <h1 class="hero-name">Shiva Krishna<br/>Rangu</h1>
+    <p class="hero-title">9 years driving portfolio governance, P&amp;L oversight, and data analytics across IT &amp; services — turning complex operational data into decisions that matter.</p>
+    <div class="hero-pills">
+      <span class="hero-pill">PMO Governance</span>
+      <span class="hero-pill">Portfolio Management</span>
+      <span class="hero-pill">Power BI</span>
+      <span class="hero-pill">P&amp;L Management</span>
+      <span class="hero-pill">Revenue Forecasting</span>
+      <span class="hero-pill">VBA Automation</span>
+    </div>
+    <div class="hero-contacts">
+      <a href="tel:+917799650787">📞 +91 77996 50787</a>
+      <a href="mailto:rshivakrishna9@gmail.com">✉️ rshivakrishna9@gmail.com</a>
+      <a href="https://linkedin.com/in/shivakrishnarangu" target="_blank">🔗 LinkedIn</a>
+    </div>
+  </div>
+
+  <div class="hero-stats">
+    <div class="stat-item">
+      <div class="stat-num">9</div>
+      <div class="stat-label">Years Experience</div>
+    </div>
+    <div class="stat-divider"></div>
+    <div class="stat-item">
+      <div class="stat-num">1,700+</div>
+      <div class="stat-label">Reports Automated</div>
+    </div>
+    <div class="stat-divider"></div>
+    <div class="stat-item">
+      <div class="stat-num">70%</div>
+      <div class="stat-label">Turnaround Reduction</div>
+    </div>
+    <div class="stat-divider"></div>
+    <div class="stat-item">
+      <div class="stat-num">20</div>
+      <div class="stat-label">Projects Managed</div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="container">
+    <p class="section-label">Professional Summary</p>
+    <h2 class="section-title">About Me</h2>
+    <p class="summary-text">
+      I am a results-driven Senior PMO professional with over 9 years of cross-functional experience in IT &amp; services. For the past 5+ years I have specialised in PMO governance, portfolio management, P&amp;L oversight, and data analytics — managing portfolios of 15–20 concurrent projects and delivering executive-ready Power BI dashboards that replace manual processes. My work aligns Finance, HR, Delivery, and Pre-Sales teams into unified, decision-ready operational views for senior leadership. I am open to hybrid and remote opportunities across India.
+    </p>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ACHIEVEMENTS -->
+<section id="achievements">
+  <div class="container">
+    <p class="section-label">Measurable Impact</p>
+    <h2 class="section-title">Key Achievements</h2>
+    <div class="achievements-grid">
+
+      <div class="achievement-card">
+        <div class="achievement-icon">⚡</div>
+        <div class="achievement-title">Automated 1,700+ MIS Reports</div>
+        <div class="achievement-desc">Built VBA &amp; MS Access automation at Genpact, converting manual report cycles to scheduled auto-delivery — eliminating significant manual effort across the team.</div>
+        <span class="achievement-metric">~12 FTEs saved · 70% faster turnaround</span>
+      </div>
+
+      <div class="achievement-card">
+        <div class="achievement-icon">📊</div>
+        <div class="achievement-title">BU-Level P&amp;L Monitoring Framework</div>
+        <div class="achievement-desc">Built a real-time gross &amp; net margin visibility framework at Birlasoft, replacing month-end finance dependency with weekly leadership-ready P&amp;L insight.</div>
+        <span class="achievement-metric">Weekly margin visibility for BU leadership</span>
+      </div>
+
+      <div class="achievement-card">
+        <div class="achievement-icon">📡</div>
+        <div class="achievement-title">Live Power BI Dashboards</div>
+        <div class="achievement-desc">Designed and deployed live dashboards for revenue, budget, resource allocation, and delivery KPIs at Birlasoft — replacing legacy manual Excel trackers.</div>
+        <span class="achievement-metric">Hours saved per leadership review</span>
+      </div>
+
+      <div class="achievement-card">
+        <div class="achievement-icon">🔗</div>
+        <div class="achievement-title">Unified Cross-Functional Data View</div>
+        <div class="achievement-desc">Integrated HR, Finance, Resourcing &amp; Sales data into a single operational dashboard used in monthly steering committee meetings by senior executives.</div>
+        <span class="achievement-metric">4 departments unified into one view</span>
+      </div>
+
+      <div class="achievement-card">
+        <div class="achievement-icon">🛡️</div>
+        <div class="achievement-title">R&amp;D Tax Claim Defence</div>
+        <div class="achievement-desc">Produced a comprehensive evidence package at Align Group reconciling engineering time, wages &amp; R&amp;D costs — successfully defending a significant client financial credit against regulatory challenge.</div>
+        <span class="achievement-metric">Client claim protected</span>
+      </div>
+
+      <div class="achievement-card">
+        <div class="achievement-icon">🗂️</div>
+        <div class="achievement-title">Portfolio Governance at Scale</div>
+        <div class="achievement-desc">Managed 15–20 concurrent projects end-to-end (initiation to closure) with independent budgets, timelines, and resource pools across BU at Birlasoft.</div>
+        <span class="achievement-metric">15–20 active projects at any time</span>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- EXPERIENCE -->
+<section id="experience">
+  <div class="container">
+    <p class="section-label">Work History</p>
+    <h2 class="section-title">Professional Experience</h2>
+    <div class="experience-list">
+
+      <div class="exp-card">
+        <div class="exp-header">
+          <div class="exp-role">Senior PMO Analyst</div>
+          <div class="exp-period">Jul 2022 – Present</div>
+        </div>
+        <p class="exp-company"><span>Birlasoft</span> · IT &amp; Services, Hyderabad</p>
+        <ul class="exp-bullets">
+          <li>Managed portfolio of 15–20 concurrent projects end-to-end with independent budgets, timelines, and resource pools.</li>
+          <li>Owned BU-level revenue budgeting and P&amp;L tracking across annual/quarterly cycles; flagged variances early and closed margin gaps with Finance.</li>
+          <li>Designed live Power BI dashboards (revenue projection, budget utilisation, resource allocation, delivery KPIs), replacing legacy manual Excel trackers.</li>
+          <li>Prepared daily, weekly &amp; monthly dashboards for BU Heads, Sales &amp; Delivery Leaders covering budget, timeline, and headcount.</li>
+          <li>Led a ~15-member cross-functional team (Delivery, Finance, HR, Resourcing, Pre-Sales); resolved inter-team handoff gaps before impacting client delivery.</li>
+          <li>Maintained proactive RAID logs across all active projects with mitigation recommendations and timely escalation.</li>
+        </ul>
+      </div>
+
+      <div class="exp-card">
+        <div class="exp-header">
+          <div class="exp-role">Senior Data Analyst</div>
+          <div class="exp-period">Jul 2021 – Jun 2022</div>
+        </div>
+        <p class="exp-company"><span>Covalense Global</span> · HRMS Analytics, Hyderabad</p>
+        <ul class="exp-bullets">
+          <li>Built Darwinbox HRMS dashboards providing recruitment &amp; HR teams with real-time hiring pipeline visibility, eliminating manual spreadsheet counting.</li>
+          <li>Owned daily operational tracker for all HR/recruitment data — validated accuracy before downstream leadership use.</li>
+          <li>Administered dashboard tool access and resolved recurring Darwinbox system issues for the recruitment team.</li>
+        </ul>
+      </div>
+
+      <div class="exp-card">
+        <div class="exp-header">
+          <div class="exp-role">Associate – R&amp;D Tax Advisory</div>
+          <div class="exp-period">Feb 2021 – Jul 2021</div>
+        </div>
+        <p class="exp-company"><span>Align Group</span> · Tax Advisory, Hyderabad</p>
+        <ul class="exp-bullets">
+          <li>Partnered with CTOs &amp; Lead Engineers to translate R&amp;D project scope into IRS-compliant documentation.</li>
+          <li>Built technical evidence packages reconciling engineering time, wages &amp; R&amp;D costs — successfully defending client claims against regulatory challenges.</li>
+        </ul>
+      </div>
+
+      <div class="exp-card">
+        <div class="exp-header">
+          <div class="exp-role">MIS Analyst</div>
+          <div class="exp-period">Jul 2017 – Feb 2021</div>
+        </div>
+        <p class="exp-company"><span>Genpact</span> · Business Process Management, Hyderabad</p>
+        <ul class="exp-bullets">
+          <li>Automated 1,700+ client reports using VBA, MS Access, and Excel — converted manual cycles to scheduled auto-delivery, saving ~12 FTEs of effort per cycle.</li>
+          <li>Built MS Access databases &amp; Excel templates standardising data collection with cross-tracker validation checks ensuring zero-error client delivery.</li>
+          <li>Engineered concurrent multi-report execution delivering outputs directly to client inboxes, cutting turnaround time significantly.</li>
+          <li>Built and maintained daily management dashboards for multiple client accounts with pre-business-day data validation.</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- SKILLS -->
+<section id="skills">
+  <div class="container">
+    <p class="section-label">Core Competencies</p>
+    <h2 class="section-title">Skills &amp; Tools</h2>
+    <div class="skills-grid">
+
+      <div class="skill-group">
+        <div class="skill-group-title">PMO &amp; Governance</div>
+        <div class="skill-tags">
+          <span class="skill-tag">PMO Governance</span>
+          <span class="skill-tag">Portfolio Management</span>
+          <span class="skill-tag">Project Lifecycle</span>
+          <span class="skill-tag">RAID Logs</span>
+          <span class="skill-tag">Risk Mitigation</span>
+          <span class="skill-tag">Change Management</span>
+        </div>
+      </div>
+
+      <div class="skill-group">
+        <div class="skill-group-title">Finance &amp; Reporting</div>
+        <div class="skill-tags">
+          <span class="skill-tag">P&amp;L Management</span>
+          <span class="skill-tag">Revenue Forecasting</span>
+          <span class="skill-tag">Budget Tracking</span>
+          <span class="skill-tag">Variance Analysis</span>
+          <span class="skill-tag">MIS Reporting</span>
+          <span class="skill-tag">KPI Development</span>
+        </div>
+      </div>
+
+      <div class="skill-group">
+        <div class="skill-group-title">Data &amp; Analytics</div>
+        <div class="skill-tags">
+          <span class="skill-tag">Power BI</span>
+          <span class="skill-tag">Power Query</span>
+          <span class="skill-tag">Advanced Excel</span>
+          <span class="skill-tag">VBA Automation</span>
+          <span class="skill-tag">MS Access</span>
+          <span class="skill-tag">Data Cleaning</span>
+        </div>
+      </div>
+
+      <div class="skill-group">
+        <div class="skill-group-title">Methodology &amp; Tools</div>
+        <div class="skill-tags">
+          <span class="skill-tag">Agile / Scrum</span>
+          <span class="skill-tag">Lean</span>
+          <span class="skill-tag">Jira / Confluence</span>
+          <span class="skill-tag">MS Project</span>
+          <span class="skill-tag">Darwinbox HRMS</span>
+          <span class="skill-tag">Google Sheets</span>
+        </div>
+      </div>
+
+      <div class="skill-group">
+        <div class="skill-group-title">Collaboration</div>
+        <div class="skill-tags">
+          <span class="skill-tag">Stakeholder Reporting</span>
+          <span class="skill-tag">Executive Dashboards</span>
+          <span class="skill-tag">Resource Planning</span>
+          <span class="skill-tag">Cross-Functional Teams</span>
+          <span class="skill-tag">Demand Management</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- CERTIFICATIONS -->
+<section>
+  <div class="container">
+    <p class="section-label">Credentials</p>
+    <h2 class="section-title">Certifications</h2>
+    <div class="cert-list">
+      <span class="cert-badge">Agile Scrum Master</span>
+      <span class="cert-badge">Agile Project Management</span>
+      <span class="cert-badge">Project Planning &amp; Management</span>
+      <span class="cert-badge">High Performing PMO</span>
+      <span class="cert-badge">Supply Chain Management</span>
+      <span class="cert-badge">Lean Process Excellence</span>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- EDUCATION -->
+<section>
+  <div class="container">
+    <p class="section-label">Academic Background</p>
+    <h2 class="section-title">Education</h2>
+    <div class="edu-grid">
+      <div class="edu-card">
+        <div class="edu-icon">🎓</div>
+        <div>
+          <div class="edu-degree">MBA – Finance</div>
+          <div class="edu-college">Vision PG College, Hyderabad</div>
+        </div>
+      </div>
+      <div class="edu-card">
+        <div class="edu-icon">📚</div>
+        <div>
+          <div class="edu-degree">B.Com – Accounting</div>
+          <div class="edu-college">Badruka College of Commerce &amp; Arts, Hyderabad</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section id="contact">
+  <div class="container">
+    <div class="cta-section">
+      <h2>Let's Connect</h2>
+      <p>Open to Senior PMO, Programme Manager, or Portfolio Analyst roles · Hybrid or Remote · Hyderabad &amp; beyond</p>
+      <div class="cta-buttons">
+        <a href="mailto:rshivakrishna9@gmail.com" class="btn-primary">✉️ Send an Email</a>
+        <a href="https://linkedin.com/in/shivakrishnarangu" target="_blank" class="btn-outline">🔗 View LinkedIn</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  © 2026 Shiva Krishna Rangu · Senior PMO Analyst · Hyderabad, Telangana
+</footer>
+
+</body>
+</html>
